@@ -1,4 +1,4 @@
-from flask import Blueprint, url_for # 라우트가 설정된 함수명으로 URL을 역으로 찾아준다.
+from flask import Blueprint, url_for, current_app # 라우트가 설정된 함수명으로 URL을 역으로 찾아준다.
 from werkzeug.utils import redirect  # 입력받은 URL로 리다이렉트 해준다.
 
 # Blueprint : 라우트 함수를 구조 적으로 관리할 수 있다
@@ -16,5 +16,5 @@ def hello_pybo(): # URL에 '/'에 매핑되는 함수. 그 매핑을 @app.route(
 
 @bp.route('/')
 def index() :
-    3/0 # 강제로 오류 발생
+    current_app.logger.info("INFO 레벨로 출력")
     return redirect(url_for('question._list')) # question은 등록한 블루프린트 이름, _list는 호출할 함수명.
