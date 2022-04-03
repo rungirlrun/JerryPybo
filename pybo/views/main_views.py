@@ -16,4 +16,5 @@ def hello_pybo(): # URL에 '/'에 매핑되는 함수. 그 매핑을 @app.route(
 
 @bp.route('/')
 def index() :
+    3/0 # 강제로 오류 발생
     return redirect(url_for('question._list')) # question은 등록한 블루프린트 이름, _list는 호출할 함수명.
