@@ -1,7 +1,7 @@
 from config.default import *
 from logging.config import dictConfig
 
-
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(
     user='dbmasteruser',
     pw='V^UD6}wh2Esb5{?$o?IFm3&iv=&U!8h*',

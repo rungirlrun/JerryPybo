@@ -21,6 +21,7 @@ def page_not_found(e):
     # return문의 두번째 매개변수인 404를 명시적으로 적어주는게 필요. 만약 404 생략하면 오류 페이지는 나타나지만
     # 클라이언트는 200 코드를 수신하게 될 것이다.
 
+
 # 오류페이지 처리 : 500
 def server_error(e):
     return render_template('500.html'), 500
