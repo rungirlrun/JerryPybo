@@ -68,3 +68,13 @@ def login_required(view):
             return redirect(url_for('auth.login'))
         return view(**kwargs)
     return wrapped_view
+
+
+# 프로필 확인
+@bp.route('/profile/<int:user_id>/')
+def profile(user_id):
+    user = User.query.get_or_404(user_id)
+    if user_id != user.id:
+        flash("잘못된 접근 입니다.")
+        return redirect(url_for('main.index'))
+    return render_template('auth/profile.html', user=user)

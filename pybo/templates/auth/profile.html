@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.id %}
+<h5 class="border-bottom pb-2 mb-3">{{ user.username }}</h5>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">기본정보</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="#">게시</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="#">답변</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="#">댓글</a>
+    </li>
+</ul>
+<div id="profile_base">
+
+    <div class="profile_title">
+        파이보 스코어 <small class="text-muted"></small>
+        <a href="javascript:void(0);" data-toggle="popover" data-placement="right"
+              data-content="게시(5점) 답변(5점) 댓글(3점) 추천하기(1점) 추천받음(1점)">
+          <i class="fas fa-question-circle text-danger"></i>
+        </a>
+    </div>
+    <p class="mb-4"><strong>0</strong> 점</p>
+    <div class="profile_title">한줄소개</div>
+    <p class="mb-4">나는 누구고 여긴 어디인가?</p>
+    <div class="profile_title">첫번째 컴퓨터</div>
+    <p class="mb-4">애니악</p>
+    <div class="profile_title">좋아하는 에디터</div>
+    <p class="mb-4">도구는 도구일뿐</p>
+    <div class="profile_title">이메일</div>
+    <p class="mb-4">{{ user.email }}</p>
+</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endif %}
+<footer class="footer">
+    <div class="container mt-3">
+        <span class="text-muted">©2022 • JERRYPYBO.SHOP </span>
+        <div class="float-right small"><a href="#">개인정보취급방침</a></div>
+        <!-- href="/common/privacy/">개인정보취급방침 -->
+    </div>
+</footer>
+
+{% endblock %}
