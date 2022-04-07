@@ -1,6 +1,7 @@
 from config.default import *
 from logging.config import dictConfig
 
+SECRET_KEY = b'\x90\xd5{\xa8\xfe0v\x8dO\x8dO,Hc\xddb'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(
     user='dbmasteruser',
