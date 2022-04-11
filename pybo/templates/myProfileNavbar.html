@@ -1,0 +1,15 @@
+<h5 class="border-bottom pb-2 mb-3">{{ user.username }}</h5>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="{{ url_for('profile.profile', user_id=g.user.id) }}">기본정보</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile.profile_list', user_id=g.user.id) }}">게시</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile.answer_list', user_id=g.user.id) }}">답변</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile.comment_list', user_id=g.user.id) }}">댓글</a>
+    </li>
+</ul>

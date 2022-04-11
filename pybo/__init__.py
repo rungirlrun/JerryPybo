@@ -44,13 +44,14 @@ def create_app():  # 애플리케이션 팩토리 함수 => DB, url 호출, 필�
     from . import models
 
     # 블루 프린트
-    from .views import main_views, question_views, answer_views, auth_views, comment_views, vote_views
+    from .views import main_views, question_views, answer_views, auth_views, comment_views, vote_views, profile_views
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
     app.register_blueprint(answer_views.bp)
     app.register_blueprint(auth_views.bp)
     app.register_blueprint(comment_views.bp)
     app.register_blueprint(vote_views.bp)
+    app.register_blueprint(profile_views.bp)
 
     # 필터
     from .filter import format_datetime

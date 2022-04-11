@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
     <!-- pybo CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Font Awesome JS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> <!--CDN 링크 -->
     <title>파이보</title>
 </head>
 <body>
@@ -26,4 +28,11 @@
 {% endblock %}
 <!-- 자바스크립트 End -->
 </body>
+<footer class="footer">
+    <div class="container mt-3">
+        <span class="text-muted">©2022 • JERRYPYBO.SHOP </span>
+        <div class="float-right small"><a href="#">개인정보취급방침</a></div>
+        <!-- href="/common/privacy/">개인정보취급방침 -->
+    </div>
+</footer>
 </html>

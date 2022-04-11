@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.id %}
+{% include "myProfileNavbar.html" %}
+<!-- 작성글 조회 시작 -->
+    <table class="table">
+        <thead>
+        <tr class="text-center thead-light">
+            <th>번호</th>
+            <th>추천</th>
+            <th style="width:50%">제목</th>
+            <th>작성일시</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if my_list %}
+        {% for item in my_list.items %}
+        <tr class="text-center">
+            <td>{{ my_list.total - ((my_list.page-1) * my_list.per_page) - loop.index0 }}</td>
+            <td>
+                {% if item.voter|length > 0 %}
+                <span class="badge badge-warning px-2 py-1">
+                    {{ item.voter|length }}
+                </span>
+                {% endif %}
+            </td>
+            <td class="text-left">
+            <a href="{{ url_for('question.detail', question_id=item.id) }}/">{{ item.subject }}</a>
+                {% if item.answer_set|length > 0 %}
+                <span class="text-danger small ml-2">{{ item.answer_set|length }}</span>
+                {% else %}
+                <span class="text-danger small ml-2">0</span>
+                {% endif %}
+            </td>
+            <td>{{ item.create_date|datetime }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="3">등록된 글이 없습니다.</td>
+        </tr>
+        {% endif %}
+        </tbody>
+    </table>
+<!-- 작성글 조회 끝 -->
+{% endif %}
+<!-- footer 영역 -->
+{% endblock %}
+{% block script %}
+<script type='text/javascript'>
+$(document).ready(function(){
+    $('.so').tooltip();
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+{% endblock %}

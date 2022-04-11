@@ -1,21 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% if user.id %}
-<h5 class="border-bottom pb-2 mb-3">{{ user.username }}</h5>
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" href="#">기본정보</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link " href="#">게시</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link " href="#">답변</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link " href="#">댓글</a>
-    </li>
-</ul>
+{% include "myProfileNavbar.html" %}
 <div id="profile_base">
 
     <div class="profile_title">
@@ -43,12 +29,12 @@
     </div>
 </div>
 {% endif %}
-<footer class="footer">
-    <div class="container mt-3">
-        <span class="text-muted">©2022 • JERRYPYBO.SHOP </span>
-        <div class="float-right small"><a href="#">개인정보취급방침</a></div>
-        <!-- href="/common/privacy/">개인정보취급방침 -->
-    </div>
-</footer>
-
+{% endblock %}
+{% block script %}
+<script type='text/javascript'>
+$(document).ready(function(){
+    $('.so').tooltip();
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 {% endblock %}
