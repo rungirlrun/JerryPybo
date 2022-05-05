@@ -65,9 +65,8 @@ def create_answer(answer_id):
         comment = Comment(user=g.user, content=form.content.data, create_date=datetime.now(), answer=answer)
         db.session.add(comment)
         db.session.commit()
-        return redirect('{}#comment_{}'.format(
-            url_for('question.detail', question_id=answer.question.id),
-                        comment.id))
+        print(comment.id, answer.question.id)
+        return redirect('{}#comment_{}'.format(url_for('question.detail', question_id=answer.question.id), comment.id))
     return render_template('comment/comment_form.html', form=form)
 
 
