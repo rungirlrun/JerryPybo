@@ -25,7 +25,7 @@ def profile(user_id):
 # 작성글 조회
 @bp.route('/list/<int:user_id>/')
 def profile_list(user_id):
-    page = request.args.get('page', type=int, default=1)
+    page = request.args.get('page', type=int, default=1)        # 페이지
     user = User.query.get_or_404(user_id)
     if user_id != user.id:
         flash("잘못된 접근 입니다.")
